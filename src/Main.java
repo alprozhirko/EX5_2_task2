@@ -34,8 +34,6 @@ public class Main {
                 .filter(person -> person.getAge() > 18 && person.getEducation() == Education.HIGHER)
                 .filter(person -> (person.getSex() == Sex.WOMAN && person.getAge() < 60) ||
                         (person.getSex() == Sex.MAN && person.getAge() < 65))
-//                .map(person -> person.getFamily())
-//                .sorted(Comparator.naturalOrder())
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
         System.out.println(workable);
